@@ -1,0 +1,30 @@
+<% if in_type == "login" %>
+  <% action_url = session_url   %>
+  <% header = "Log In" %>
+<% else %>
+  <% action_url = user_url if in_type == "signup"  %>
+  <% header = "Sign Up" %>
+<% end %>
+<div class="in-form">
+  <div class="page-header">
+    <h1><%= header %></h1>
+  </div>
+
+  <form action = "<%= action_url %>", method = "post">
+
+    <%= auth_token_input %>
+    <div class="form-group">
+      <label for="username">Username </label>
+      <input type="text" class="form-control" name="user[username]" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password </label>
+      <input type="password" class="form-control" name="user[password]" placeholder="Password">
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-default"><%= header %></button>
+
+  </form>
+
+</div>

@@ -1,0 +1,11 @@
+<%= render "layouts/nav_bar" %>
+<% @in_type = "signup" %>
+<%= render partial: "layouts/in_form", locals: { in_type:  @in_type} %>
+
+</br>
+<div class="redirect-form">
+  <h3>Have An Account?</h3>
+  <button type="submit" class="btn btn-default">
+    <a href="<%= login_url %>">Log In</a>
+  </button>
+</div>

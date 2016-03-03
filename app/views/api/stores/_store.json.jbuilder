@@ -1,0 +1,14 @@
+json.extract!(
+  @store,
+  :name,
+  :lat,
+  :lon,
+  :image_url,
+  :street,
+  :neighborhood,
+  :city,
+  :phone,
+  :rating,
+  :review_count,
+  :tags
+)
