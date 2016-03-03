@@ -126,7 +126,7 @@ Rec'D is a web application inspired by Yelp for coffee enthusiasts in San Fransi
 - [x] Get feedback on my UI from others
 - [x] Refactor HTML classes & CSS rules
 - [x] Seeding Data
-- [ ] Splash Page
+- [x] Splash Page
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)

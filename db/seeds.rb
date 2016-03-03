@@ -69,7 +69,7 @@ Store.all.length.times.map do  |s_id|
       Review.create!(
         store_id: s_id + 1,
         user_id: u_id + 1,
-        rating: rand(3..5),
+        rating: rand(0..5),
         review: Faker::Hipster.paragraphs(rand(1..4).to_i).join(" "),
       )
     end
