@@ -1,11 +1,10 @@
 var React = require('react');
 var StoreStore = require('../stores/storeStore.js');
 var ApiUtils = require('../utils/utils.js');
-var StoreIndexItem = require('../components/storeIndexItem.jsx')
+var StoreIndexItem = require('../components/storeIndexItem.jsx');
 var MapStore = require('../stores/mapStore.js');
 var History = require('react-router').History;
 var MapActions = require('../actions/mapActions.js');
-var MapStore = require('../stores/mapStore.js');
 
 
 var PopularPosts = React.createClass({
@@ -21,7 +20,7 @@ var PopularPosts = React.createClass({
   componentDidMount: function() {
     this.mapListener = MapStore.addListener(this._onMapChange);
     this.storeListener = StoreStore.addListener(this._onStoreChange);
-    MapActions.popularStores(this.state.numStores)
+    MapActions.popularStores(this.state.numStores);
   },
 
   _onStoreChange: function() {
@@ -36,6 +35,7 @@ var PopularPosts = React.createClass({
 
   componentWillUnmount: function() {
     this.storeListener.remove();
+    this.mapListener.remove();
   },
 
   renderStores: function() {
@@ -49,7 +49,7 @@ var PopularPosts = React.createClass({
         if (this.state.stores.hasOwnProperty(i)) {
           _renderStores.push(
             <StoreIndexItem key={i} store={this.state.stores[i]}/>
-          )
+          );
         }
       }
     }

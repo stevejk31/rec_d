@@ -28,7 +28,7 @@ var StoreIndexItem = React.createClass({
     e.preventDefault();
     FilterActions.setTag(tag);
     window.scrollTo(0, 0);
-    this.history.pushState({}, '/stores/', {});
+    this.history.push('/stores/');
   },
   renderTags: function(tags) {
     var tempTags = [];

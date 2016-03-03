@@ -14,37 +14,41 @@ MapStore.__onDispatch = function(payload) {
       MapStore.__emitChange();
       break;
     case "NEIGHBORHOOD_UPDATE":
-      _params.neighborhood = payload.neighborhood
+      _params.neighborhood = payload.neighborhood;
       MapStore.__emitChange();
       break;
     case "SEARCH_TAG":
-      _params.tag = payload.tag
+      _params.tag = payload.tag;
       MapStore.__emitChange();
       break;
     case "SET_CENTER":
-      _params.center = payload.center
+      _params.center = payload.center;
       MapStore.__emitChange();
       break;
     case "STORE_SEARCH":
-      _params.store = payload.store
+      _params.store = payload.store;
       MapStore.__emitChange();
       break;
     case "ADD_MORE_STORES":
-      _params.numStores = payload.numStores
+      _params.numStores = payload.numStores;
       MapStore.__emitChange();
       break;
     case "POPULAR_STORES":
-      _params.numStores = payload.numStores
+      resetParams(payload.numStores);
       MapStore.__emitChange();
       break;
   }
 };
+var resetParams = function(numStores) {
+  _params = {};
+  _params.numStores = numStores;
+};
 
 MapStore.getCenter = function() {
-  var center = Object.assign({}, _params.center)
-  delete _params.center
+  var center = Object.assign({}, _params.center);
+  delete _params.center;
   return center;
-}
+};
 
 
 module.exports = MapStore;

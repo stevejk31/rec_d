@@ -19,7 +19,7 @@ class Api::StoresController < ApplicationController
       @stores
     end
     if !@stores && params[:params][:numStores] == "5"
-      @stores = Store.order('rating DESC').first(5)
+      @stores = Store.where('rating = ?', 5).order("RANDOM()").first(5)
     end
   end
 

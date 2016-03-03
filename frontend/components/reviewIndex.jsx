@@ -1,7 +1,7 @@
 var React = require('react');
 var ReviewStore = require('../stores/reviewStore.js');
 var ApiUtils = require('../utils/utils.js');
-var ReviewIndexItem = require('../components/reviewIndexItem.jsx')
+var ReviewIndexItem = require('../components/reviewIndexItem.jsx');
 var ReviewForm = require('../components/reviewForm.jsx');
 var UserStore = require('../stores/userStore.js');
 
@@ -48,8 +48,8 @@ var ReviewIndex = React.createClass({
       _renderReviews = Object.keys(this.state.reviews).map(function(idx){
         return (
           <ReviewIndexItem key={idx} review={this.state.reviews[idx]} />
-        )
-      }.bind(this))
+        );
+      }.bind(this));
     }
 
     return _renderReviews.reverse();

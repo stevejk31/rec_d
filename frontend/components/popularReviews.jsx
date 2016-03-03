@@ -1,13 +1,13 @@
 var React = require('react');
 var ReviewStore = require('../stores/reviewStore.js');
 var ApiUtils = require('../utils/utils.js');
-var ReviewIndexItem = require('../components/reviewIndexItem.jsx')
+var PopularReviewItem = require('../components/popularReviewItem.jsx');
 
 
 var PopularReviews = React.createClass({
   getInitialState: function() {
     return ({
-      reviews: ReviewStore.all(),
+      reviews: {},
     });
   },
 
@@ -17,6 +17,7 @@ var PopularReviews = React.createClass({
   },
 
   componentWillUnmount: function() {
+    this.reviewListener.remove();
   },
 
 
@@ -28,15 +29,15 @@ var PopularReviews = React.createClass({
 
   renderReviews: function() {
     var _renderReviews;
-    
+
     if (this.state.reviews === {}) {
       _renderReviews = ["loading..."];
     } else {
       _renderReviews = Object.keys(this.state.reviews).map(function(idx){
         return (
-          <ReviewIndexItem key={idx} review={this.state.reviews[idx]} />
-        )
-      }.bind(this))
+          <PopularReviewItem key={idx} review={this.state.reviews[idx]} />
+        );
+      }.bind(this));
     }
 
     return _renderReviews.reverse();
@@ -47,7 +48,7 @@ var PopularReviews = React.createClass({
 
     return (
       <div className="container-fluid">
-        <ul className="reviews-list nav nav-pills nav-stacked">
+        <ul className="popular-review-list nav nav-pills nav-stacked">
           {this.renderReviews()}
         </ul>
       </div>

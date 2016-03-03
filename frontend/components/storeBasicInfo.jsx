@@ -1,6 +1,6 @@
 var React = require('react');
 var History = require('react-router').History;
-var FilterActions = require('../actions/filterActions.js')
+var FilterActions = require('../actions/filterActions.js');
 
 
 var StoreBasicInfo = React.createClass({
@@ -27,21 +27,32 @@ var StoreBasicInfo = React.createClass({
       <li className="list-group-item categories">
         Tag(s): {tempTags}
       </li>
-    )
+    );
   },
 
   render: function() {
     return (
       <ul className="store-info list-group">
         <h2>{this.props.basicInfo.name}</h2>
-        <li className="list-group-item street">Street: {this.props.basicInfo.street} </li>
-        <li className="list-group-item neighborhood">Neighborhood: {this.props.basicInfo.neighborhood} </li>
-        <li className="list-group-item city">City: {this.props.basicInfo.city} </li>
-        <li className="list-group-item phone">Phone: {this.props.basicInfo.phone} </li>
-        <li className="list-group-item review_count">Review Count: {this.props.basicInfo.reviewCount} </li>
-        <li className="list-group-item"><div className="store-info-rating">
-           <span className=" rating" data-stars={this.props.basicInfo.rating}/>
-           </div>
+        <li className="list-group-item street">
+          Street: {this.props.basicInfo.street}
+        </li>
+        <li className="list-group-item neighborhood">
+          Neighborhood: {this.props.basicInfo.neighborhood}
+        </li>
+        <li className="list-group-item city">
+          City: {this.props.basicInfo.city}
+        </li>
+        <li className="list-group-item phone">
+          Phone: {this.props.basicInfo.phone}
+        </li>
+        <li className="list-group-item review_count">
+          Review Count: {this.props.basicInfo.reviewCount}
+        </li>
+        <li className="list-group-item">
+          <div className="store-info-rating">
+            <span className=" rating" data-stars={this.props.basicInfo.rating}/>
+          </div>
         </li>
         {this.renderTags(this.props.basicInfo.tags)}
       </ul>

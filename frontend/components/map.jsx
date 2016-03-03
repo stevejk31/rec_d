@@ -25,22 +25,13 @@ var Map = React.createClass({
     this.registerListeners();
     var idx = 0;
     idx = 0;
-    for (var key in this.props.stores) {
-      if (this.props.stores.hasOwnProperty(key)) {
-        this.createMarkerFromStore(this.props.stores[key]);
-      }
-      idx ++;
-      if (idx == this.props.numStores) {
-        break;
-      }
-    }
 
     // center map iof there is only 1 store
-    if (Object.keys(this.props.stores).length === 1) {
+    if (this.props.stores[0] !== undefined && Object.keys(this.props.stores).length === 1) {
       var avgLat = this.props.stores[0].basicInfo.lat;
       var avgLon = this.props.stores[0].basicInfo.lon;
       this.map.setCenter({lat: avgLat, lng: avgLon});
-      this.map.setZoom(16)
+      this.map.setZoom(16);
     }
 
   },
@@ -55,18 +46,15 @@ var Map = React.createClass({
     var idx = 0;
     idx = 0;
     for (var key in this.props.stores) {
-      if (this.props.stores.hasOwnProperty(key)) {
+      if (this.props.stores.hasOwnProperty(key) && key !== "undefined") {
+
         this.createMarkerFromStore(this.props.stores[key]);
       }
-      idx ++;
-      if (idx == this.props.numStores) {
-        break;
-      }
     }
-    center = MapStore.getCenter();
+    var center = MapStore.getCenter();
     if (center.lat != undefined && center.lng != undefined) {
       this.map.setCenter({lat: center.lat, lng: center.lng});
-      this.map.setZoom(15)
+      this.map.setZoom(15);
     }
   },
 

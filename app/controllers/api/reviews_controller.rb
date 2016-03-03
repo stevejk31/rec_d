@@ -1,8 +1,8 @@
 class Api::ReviewsController < ApplicationController
   def index
-    @reviews = Review.order("rating DESC").first(3)
-    render :show
+    @reviews = Review.joins(:store).order("RANDOM()").first(3)
   end
+
   def show
     @reviews = Review.where("store_id = ?", params[:id])
   end

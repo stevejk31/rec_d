@@ -12,11 +12,11 @@ var NavBar = React.createClass({
   mixins: [History],
 
   getInitialState: function() {
-    return {currentUser: UserStore.currentUser()}
+    return {currentUser: UserStore.currentUser()};
   },
 
   componentDidMount: function() {
-    ApiUtils.fetchCurrentUser()
+    ApiUtils.fetchCurrentUser();
     this.storeListener = UserStore.addListener(this._onChange);
   },
 
@@ -30,7 +30,6 @@ var NavBar = React.createClass({
   },
 
   signUp: function(e) {
-    //TODO reflect on a better way
     e.preventDefault();
     window.location.replace("/signup");
     this.history.pushState({}, '/signup/', {});
@@ -45,7 +44,7 @@ var NavBar = React.createClass({
   },
 
   signOut: function() {
-    ApiUtils.signOutCurrentUser()
+    ApiUtils.signOutCurrentUser();
   },
 
   userProfile: function() {
@@ -56,25 +55,27 @@ var NavBar = React.createClass({
     if(this.state.currentUser.username ===  null){
       return (
         <ul className="navbar-list nav-pills">
-          <SearchBar />
-          <Neighborhood />
-          <li onClick={this.logIn} className="icon-bar"><a href="#"><font color="#0f006f">Log In</font></a></li>
-          <li onClick={this.signUp} className="icon-bar"><a href="#"><font color="#0f006f">Sign Up</font></a></li>
+          <li onClick={this.logIn} className="icon-bar">
+            <a href="#"><font color="#0f006f">Log In</font></a>
+          </li>
+          <li onClick={this.signUp} className="icon-bar">
+            <a href="#"><font color="#0f006f">Sign Up</font></a>
+          </li>
         </ul>
-      )
+      );
     } else {
       return (
         <ul className="navbar-list nav-pills">
-          <SearchBar />
-          <Neighborhood />
           <li>
             <b>
               <font color="#0f006f">{this.state.currentUser.username}</font>
             </b>
           </li>
-          <li onClick={this.signOut} className="icon-bar"><a href="#"><font color="#0f006f">Sign Out</font></a></li>
+          <li onClick={this.signOut} className="icon-bar">
+            <a href="#"><font color="#0f006f">Sign Out</font></a>
+          </li>
         </ul>
-      )
+      );
     }
   },
 
@@ -90,7 +91,10 @@ var NavBar = React.createClass({
               </div></div>
             </font></a>
           </div>
-
+          <ul className="navbar-list nav-pills nav-left">
+            <SearchBar />
+            <Neighborhood />
+          </ul>
 
           {this.renderNavBarRight()}
         </div>

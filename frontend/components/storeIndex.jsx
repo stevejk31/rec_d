@@ -22,7 +22,6 @@ var StoreIndex = React.createClass({
   },
 
   componentDidMount: function() {
-    ApiUtils.fetchStores();
     this.storeListener = StoreStore.addListener(this._onStoreChange);
     this.mapListener = MapStore.addListener(this._onMapChange);
   },
@@ -78,22 +77,6 @@ var StoreIndex = React.createClass({
     return _renderStores;
   },
 
-  renderMap: function(){
-    var map = "";
-    if (Object.keys(this.state.stores)[0] != ["undefined"]) {
-      map = (
-        <div className="map-container">
-          <Map
-          numStores={this.state.numStores}
-          onMarkerClick={this.handleMarkerClick}
-          onMarkerHover={this.handleMarkerHover}
-          stores={this.state.stores}
-          />
-        </div>
-      );
-    }
-    return map;
-  },
 
   addMore: function () {
     var newNumStores = this.state.numStores + 10;
@@ -119,7 +102,14 @@ var StoreIndex = React.createClass({
     }
     return (
       <div className="container-fluid">
-          {this.renderMap()}
+        <div className="map-container">
+          <Map
+          numStores={this.state.numStores}
+          onMarkerClick={this.handleMarkerClick}
+          onMarkerHover={this.handleMarkerHover}
+          stores={this.state.stores}
+          />
+        </div>
         <div id="store-index-left">
           <ul className="stores-list nav nav-pills nav-stacked">
             {search}

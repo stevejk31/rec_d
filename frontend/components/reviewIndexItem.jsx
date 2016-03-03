@@ -9,13 +9,13 @@ var ReviewIndexItem = React.createClass({
     ApiUtils.deleteReview(this.props.review.id);
   },
 
-  edit: function() {
-
-  },
-
   renderDelete: function() {
     if(UserStore.currentUser().username === this.props.review.user.username){
-      return <button className="btn btn-default" onClick={this.delete}>Delete</button>;
+      return (
+        <button className="btn btn-default" onClick={this.delete}>
+          Delete
+        </button>
+    );
     } else {
       return "";
     }
@@ -23,9 +23,13 @@ var ReviewIndexItem = React.createClass({
   render: function() {
     return (
       <li className="review-list-item list-group-item" role="presentation">
-        <div className="review-username">Username:{this.props.review.user.username}</div>
-        <div className="review-rating">Rating:{this.props.review.rating}</div>
-        <div className="review-review">Review:{this.props.review.review}</div>
+        <div className="review-username">
+          <h4>{this.props.review.user.username}</h4>
+        </div>
+        <div className="review-rating">
+          <span className=" rating" data-stars={this.props.review.rating}/>
+        </div>
+        <div className="review-review">{this.props.review.review}</div>
         {this.renderDelete()}
 
       </li>
