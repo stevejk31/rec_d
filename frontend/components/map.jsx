@@ -27,7 +27,8 @@ var Map = React.createClass({
     idx = 0;
 
     // center map iof there is only 1 store
-    if (this.props.stores[0] !== undefined && Object.keys(this.props.stores).length === 1) {
+    if (this.props.stores[Object.keys(this.props.stores)[0]] !== undefined &&
+        Object.keys(this.props.stores).length === 1) {
       var avgLat = this.props.stores[0].basicInfo.lat;
       var avgLon = this.props.stores[0].basicInfo.lon;
       this.map.setCenter({lat: avgLat, lng: avgLon});

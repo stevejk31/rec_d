@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :stores, only: [:index, :show]
     resources :reviews, only: [:index, :show, :create, :destroy]
-    resource :current, only: [:show, :destroy]
+    resource :current, only: [:show, :destroy, :create]
   end
   resource :user, only: [:create, :update, :destroy]
   get 'signup', :to => 'users#new'

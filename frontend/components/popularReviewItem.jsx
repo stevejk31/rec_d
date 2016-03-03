@@ -7,7 +7,8 @@ var History = require('react-router').History;
 var PopularReviewItem = React.createClass({
   mixins: [History],
 
-  showDetail: function () {
+  showDetail: function (e) {
+    e.preventDefault();
     this.history.pushState(null, '/store/' + this.props.review.store.id, {});
     window.scrollTo(0, 0);
   },
@@ -21,9 +22,9 @@ var PopularReviewItem = React.createClass({
           <h4>
             <b>{this.props.review.user.username}</b>
             {" wrote a review for "}
-            <b onClick={this.showDetail} className="review-store-name">
+            <a href="#" onClick={this.showDetail} className="review-store-name">
               {this.props.review.store.name}
-            </b>
+            </a>
           </h4>
         </div>
         <div className="popular-review-rating">

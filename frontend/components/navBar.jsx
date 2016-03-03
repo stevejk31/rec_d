@@ -16,8 +16,8 @@ var NavBar = React.createClass({
   },
 
   componentDidMount: function() {
-    ApiUtils.fetchCurrentUser();
     this.storeListener = UserStore.addListener(this._onChange);
+    ApiUtils.fetchCurrentUser();
   },
 
   componentWillUnmount: function() {

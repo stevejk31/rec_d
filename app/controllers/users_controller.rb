@@ -12,11 +12,6 @@
 
 class UsersController < ApplicationController
   before_filter :login_in?
-  def update
-  end
-
-  def destroy
-  end
 
   def new
     @user = User.new

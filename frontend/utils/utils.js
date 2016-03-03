@@ -50,8 +50,8 @@ var ApiUtils = {
       url: "api/reviews",
       type: "POST",
       data: {review: review},
-      success: function(review) {
-        ReviewActions.postReview(review);
+      success: function(recievedReview) {
+        ReviewActions.postReview(recievedReview);
       },
       error: function(response){
         ReviewActions.failedPost(response);
@@ -63,8 +63,8 @@ var ApiUtils = {
     $.ajax({
       url: "api/reviews/" + id,
       type: "DELETE",
-      success: function(id) {
-        ReviewActions.deleteReview(id);
+      success: function(redcievedId) {
+        ReviewActions.deleteReview(redcievedId);
       }
     });
   },
@@ -73,6 +73,20 @@ var ApiUtils = {
     $.ajax({
       url: "api/current" ,
       type: "GET",
+      success: function(user) {
+        UserActions.currentUser(user);
+      }
+    });
+  },
+
+  signInGuest: function() {
+    $.ajax({
+      url: "api/current" ,
+      type: "POST",
+      data: {
+             username: "guestBarista1",
+             password: "asdfasdf"
+            },
       success: function(user) {
         UserActions.currentUser(user);
       }
