@@ -15,5 +15,3 @@
 # Frontend
 node_modules
 bundle.js
-
-application.html.erb
