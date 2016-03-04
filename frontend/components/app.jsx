@@ -8,7 +8,7 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <div className="wrapper">
+      <div id="wrapper">
         <NavBar/>
         <div className="main-container container-fluid">
           {this.props.children}

@@ -15,6 +15,36 @@ class Api::StoresController < ApplicationController
       if params[:params][:open] == "true"
         @stores = @stores.open_closed
       end
+      if params[:params][:wifi] == "true"
+        @stores = @stores.joins(:business_info).where("wifi = ?", "Yes")
+      end
+      if params[:params][:creditCard] == "true"
+        @stores = @stores.joins(:business_info).where("wifi = ?", "Yes")
+      end
+      if params[:params][:acceptsAndroid] == "true"
+        @stores = @stores.joins(:business_info).where("accepts_android = ?", "Yes")
+      end
+      if params[:params][:acceptsApple] == "true"
+        @stores = @stores.joins(:business_info).where("accepts_apple = ?", "Yes")
+      end
+      if params[:params][:parking] == "true"
+        @stores = @stores.joins(:business_info).where("parking = ?", "Yes")
+      end
+      if params[:params][:bikeParking] == "true"
+        @stores = @stores.joins(:business_info).where("bike_parking = ?", "Yes")
+      end
+      if params[:params][:outdoorSeating] == "true"
+        @stores = @stores.joins(:business_info).where("outdoor_seating = ?", "Yes")
+      end
+      if params[:params][:hasTv] == "true"
+        @stores = @stores.joins(:business_info).where("has_tv = ?", "Yes")
+      end
+      if params[:params][:waiterService] == "true"
+        @stores = @stores.joins(:business_info).where("waiter_service = ?", "Yes")
+      end
+      if ["Quiet", "Medium", "Loud"].include?(params[:params][:noiseLevel])
+        @stores = @stores.joins(:business_info).where("noise_level = ?", params[:params][:noiseLevel])
+      end
     end
 
     #janky pagation

@@ -45,6 +45,42 @@ MapStore.__onDispatch = function(payload) {
       _params.wifi = payload.wifi;
       MapStore.__emitChange();
       break;
+    case "ACCEPT_CC":
+      _params.creditCard = payload.creditCard;
+      MapStore.__emitChange();
+      break;
+    case "ACCEPT_AND":
+      _params.acceptsAndroid = payload.acceptsAndroid;
+      MapStore.__emitChange();
+      break;
+    case "ACCEPT_APP":
+      _params.acceptsApple = payload.acceptsApple;
+      MapStore.__emitChange();
+      break;
+    case "PARKING":
+      _params.parking = payload.parking;
+      MapStore.__emitChange();
+      break;
+    case "BIKE_PARKING":
+      _params.bikeParking = payload.bikeParking;
+      MapStore.__emitChange();
+      break;
+    case "OUTDOOR_SEATING":
+      _params.outdoorSeating = payload.outdoorSeating;
+      MapStore.__emitChange();
+      break;
+    case "HAS_TV":
+      _params.hasTv = payload.hasTv;
+      MapStore.__emitChange();
+      break;
+    case "WAITER_SERVICE":
+      _params.waiterService = payload.waiterService;
+      MapStore.__emitChange();
+      break;
+    case "NOISE_LEVEL":
+      _params.noiseLevel = payload.noiseLevel;
+      MapStore.__emitChange();
+      break;
   }
 };
 var resetParams = function(numStores) {

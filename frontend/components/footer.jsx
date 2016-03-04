@@ -16,8 +16,10 @@ var Footer = React.createClass({
         </small>
 
         <ul className="footer-links group">
-          <li><a onClick={this.handleClick} href="/#/stores/">Home</a></li>
-          <li><a onClick={this.handleClick} href="/#/">About</a></li>
+          <li><a onClick={this.handleClick} href="/#/stores/">Search</a></li>
+          <li><a onClick={this.handleClick} href="/#/">Home</a></li>
+          <li><a onClick={this.handleClick} href="/#/about/">About</a></li>
+
         </ul>
 
       </footer>
@@ -26,7 +28,3 @@ var Footer = React.createClass({
 });
 
 module.exports = Footer;
-
-// useful things to add to footer later
-// <li><a href="#">Terms</a></li>
-// <li><a href="#">Privacy</a></li>

@@ -43,7 +43,7 @@ var Neighbordhood = React.createClass({
     if (locations[0] !== undefined) {
       MapActions.setCenter(NEIGHBORHOODS[locations[0]])
       this.history.pushState({}, '/stores/', {});
-      this.setState( { inputVal: "" });  
+      this.setState( { inputVal: "" });
 
     }
   },
@@ -71,7 +71,7 @@ var Neighbordhood = React.createClass({
           onKeyPress={this.handleEnter}
           onChange={this.handleInput}
           value={this.state.inputVal}
-          placeholder="Nearby..."/>
+          placeholder="Enter Neighborhood..."/>
         <ul className={this.locationClassName}>
           {results}
         </ul>

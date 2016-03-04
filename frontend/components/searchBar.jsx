@@ -16,7 +16,7 @@ var SearchBar = React.createClass({
 
   handleButton: function () {
     MapActions.searchStores(this.state.inputVal);
-    this.history.pushState({}, '/stores/', {});
+    this.history.push('/stores/');
     this.setState({inputVal:""})
   },
 

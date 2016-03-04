@@ -79,7 +79,7 @@ var StoreIndexItem = React.createClass({
               data-stars={this.props.store.basicInfo.rating}>
             </div>
           </div>
-          <div onClick={this.showDetail}
+          <div
             className="store-index-item-basic-info store-index-item-info">
             <div className="street">
               Street: {this.props.store.basicInfo.street}

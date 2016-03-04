@@ -5,6 +5,7 @@ var StoreIndexItem = require('../components/storeIndexItem.jsx');
 var Map = require('../components/map.jsx');
 var MapActions = require('../actions/mapActions.js');
 var MapStore = require('../stores/mapStore.js');
+var FilterActions = require('../actions/filterActions.js');
 var Filter = require('../components/filter.jsx');
 var History = require('react-router').History;
 
@@ -85,6 +86,14 @@ var StoreIndex = React.createClass({
     MapActions.addMoreStores(newNumStores);
   },
 
+  removeStoreParam: function (argument) {
+    MapActions.searchStores();
+  },
+
+  removeTagParam: function (argument) {
+    FilterActions.setTag();
+  },
+
   render: function() {
     var button = "";
     if (this.state.loadMore) {
@@ -97,12 +106,30 @@ var StoreIndex = React.createClass({
         </button>
       );
     }
-    var search = "";
+    var search = [];
     if (this.state.mapParams.store) {
-      search = <li>The results for "{this.state.mapParams.store}"</li>;
+      search.push(
+        <li key={this.state.mapParams.store}>
+          The results for "{this.state.mapParams.store}"
+          <button className="btn btn-default remove-param-button"
+            onClick={this.removeStoreParam}>
+            X
+          </button>
+        </li>);
+    }
+    if (this.state.mapParams.tag) {
+      search.push(
+        <li key={this.state.mapParams.tag}>
+          The results for tags: "{this.state.mapParams.tag}"
+          <button className="btn btn-default remove-param-button"
+            onClick={this.removeTagParam}>
+            X
+          </button>
+        </li>);
     }
     return (
       <div className="container-fluid">
+        <Filter />
         <div className="map-container">
           <Map
           numStores={this.state.numStores}
@@ -110,7 +137,6 @@ var StoreIndex = React.createClass({
           onMarkerHover={this.handleMarkerHover}
           stores={this.state.stores}
           />
-        <Filter />
         </div>
         <div id="store-index-left">
           <ul className="stores-list nav nav-pills nav-stacked">

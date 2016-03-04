@@ -3,6 +3,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+#wrapper {
+  background-color: #faebd7;
+}
+
 #splash-left {
   float: left;
   width: 56%;
@@ -24,8 +28,8 @@
 
 .welcome-box-image {
   background-image: url("https://lisamulch.files.wordpress.com/2011/06/img_8930.jpg");
-  background-size: 1600px 500px;
-  width: 100%;
+  background-size: 1200px 420px;
+  width: 80%;
   margin: auto;
   padding: 0;
   border: 1px solid #d3d3d3;
@@ -41,15 +45,16 @@
   margin: auto;
   text-align: center;
   color: #ffffff;
-  text-shadow: 1px 1px #000000;
+  text-shadow: 2px 2px #000000;
   z-index: 5;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .25);
 }
 
 .main-container {
   padding-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  min-height: 800px;
 }
 
  #map {
@@ -62,23 +67,24 @@
 
  .map-container {
   min-width: 300px;
-  width:48%;
+  width:40%;
   max-width:800px;
   height: 400px;
   position: fixed;
   float:right;
-  transform:translateX(100%);
+  right: 2%;
  }
 
  .map-filters-index {
-   padding-top: 20px;
-   margin-top: 20px;
-   float:right;
+   padding-top: 0px;
+   margin-top: 0px;
+   margin: 0 auto;
  }
 
  .filter-buttons {
    margin-left: 10px;
-   width: 100px;
+   margin-bottom: 10px;
+   width: 115px;
  }
 
  .button-open {
@@ -198,9 +204,7 @@
   width: 190px;
   height:100%;
 }
-.store-index-item-basic-info {
-  cursor:pointer;
-}
+
 
 .reviews-index-container {
   width:65%;
@@ -367,11 +371,11 @@
 .navbar-list {
   list-style-type:none;
   float: right;
-  padding-left: 19px;
+  padding-left:0px;
   padding-right: 19px;
-  padding-top: 10px;
+  padding-top: 14px;
   right: 20px;
-  font-size: 18px;
+  font-size: 16px;
   min-width: 200px;
 }
 
@@ -380,7 +384,7 @@
 }
 
 .navbar-list > li {
-  padding: 5px 20px;
+  padding: 5px 10px;
 }
 
 .location-search {
@@ -395,12 +399,20 @@
   float: right;
 }
 
+.remove-param-button {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin-left: 10px;
+  padding: 0 0;
+}
+
 .location-form {
   width: 200px;
 }
 
 .location-locations {
-  top: 44px;
+  top: 40px;
   display: none;
   position: absolute;
   font-size: 14px;
@@ -420,7 +432,9 @@
 }
 
 .location-locations > li {
-  width: 174px;
+  width: 195px;
+  margin-left: 0;
+  padding-left: 0;
   color: #000;
   list-style-type:none;
 }

@@ -17,7 +17,15 @@
 
 class Store < ActiveRecord::Base
   has_many :reviews
+
   has_many :tags
+
+  has_one :business_info
+
+  has_many :hours,
+    foreign_key: :store_id,
+    primary_key: :id,
+    class_name: "StoreHour"
 
   validates(
     :name,
@@ -34,15 +42,7 @@ class Store < ActiveRecord::Base
 
   validates :street, presence:true, uniqueness: true
 
-  has_one :business_info
-
-  has_many :hours,
-    foreign_key: :store_id,
-    primary_key: :id,
-    class_name: "StoreHour"
-
   before_save :fix_rating
-
 
   def self.in_bounds(bounds)
     self.where("lat BETWEEN ? AND ?", (bounds[:southWest][:lat].to_f + (0.002 * 0.0000000014/(bounds[:zoom].to_f * 0.000000001))),
@@ -52,11 +52,11 @@ class Store < ActiveRecord::Base
   end
 
   def self.open_closed
-    min = "#{Time.new.min}"
+    min = Time.new.min.to_s
     if min.length == 1
       min = "0#{min}"
     end
-    current_time = "#{ Time.new.hour}#{Time.new.min}".to_i
+    current_time = "#{ Time.new.hour }#{ min }".to_i
     day_of_week = Time.new.day
     day_of_week = "Sun" if day_of_week == 0
     day_of_week = "Mon" if day_of_week == 1
