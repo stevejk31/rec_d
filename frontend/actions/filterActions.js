@@ -18,6 +18,12 @@ var FilterActions = {
       actionType: "OPEN_STORES",
       open: bool,
     });
+  },
+  wifiStores: function (bool){
+    AppDispatcher.dispatch({
+      actionType: "WIFI_AVAIL",
+      wifi: bool,
+    });
   }
 
 };

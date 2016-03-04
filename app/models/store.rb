@@ -51,7 +51,11 @@ class Store < ActiveRecord::Base
                                       (bounds[:northEast][:lng].to_f - (0.002 * 0.0000000014/(bounds[:zoom].to_f * 0.000000001))))
   end
 
-  def self.current_time
+  def self.open_closed
+    min = "#{Time.new.min}"
+    if min.length == 1
+      min = "0#{min}"
+    end
     current_time = "#{ Time.new.hour}#{Time.new.min}".to_i
     day_of_week = Time.new.day
     day_of_week = "Sun" if day_of_week == 0
@@ -61,14 +65,11 @@ class Store < ActiveRecord::Base
     day_of_week = "Thurs" if day_of_week == 4
     day_of_week = "Fri" if day_of_week == 5
     day_of_week = "Sat" if day_of_week == 6
-    [day_of_week, current_time]
-    day_of_week, current_time = Store.current_time
-    # Store.joins(:hours)
-    #  .joins(:tags)
-    #  .where("day_of_week = ?", day_of_week)
-    #  .where("CAST(time_open AS INT) < ?", current_time)
-    #  .where("CAST(time_closed AS INT) > ?", current_time)
-    #  .where("tag = ?", params[:params][:tag])
+    self.joins(:hours)
+          .where("day_of_week = ?", day_of_week)
+          .where("CAST(time_open AS INT) < ?", current_time)
+          .where("CAST(time_closed AS INT) > ?", current_time)
+          .distinct
 
   end
 

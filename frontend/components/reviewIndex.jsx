@@ -65,7 +65,7 @@ var ReviewIndex = React.createClass({
   render: function() {
 
     return (
-      <div className="reviews-index container-fluid">
+      <div className="reviews-index-container container-fluid">
         <h3>Recommended Reviews</h3>
         {this.renderForm()}
         <ul className="reviews-index nav nav-pills nav-stacked">

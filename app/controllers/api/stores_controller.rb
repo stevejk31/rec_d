@@ -12,12 +12,19 @@ class Api::StoresController < ApplicationController
       if params[:params][:store]
         @stores = @stores.where("UPPER(name) LIKE UPPER(?)", "%#{params[:params][:store]}%")
       end
+      if params[:params][:open] == "true"
+        @stores = @stores.open_closed
+      end
     end
+
+    #janky pagation
     if @stores && params[:params][:numStores]
       @stores = @stores.first(params[:params][:numStores])
     else
       @stores
     end
+
+    # popular
     if !@stores && params[:params][:numStores] == "5"
       @stores = Store.where('rating = ?', 5).order("RANDOM()").first(5)
     end

@@ -55,13 +55,16 @@ var Splash = React.createClass({
           </button>
           <br/>
           <br/>
-          
+
           <div>
             {"Just want to check us out? "}
             <u onClick={this.guestLogin} className="guest-login"
               >
               Guest Login
             </u>
+            <br/>
+            <br/>
+
           </div>
 
         </div>
@@ -69,8 +72,6 @@ var Splash = React.createClass({
     } else {
       return   (
         <div className="welcome-box">
-          <br/>
-          <br/>
           <br/>
           <br/>
           <h2>

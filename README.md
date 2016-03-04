@@ -12,8 +12,8 @@ Rec'D is a web application inspired by Yelp for coffee enthusiasts in San Fransi
 - [x] View local Restaurants
 - [x] Leave comments and ratings
 - [x] Filter Stores by tags
-- [ ] Search by Location
-- [ ] Search by Name
+- [x] Search by Location
+- [x] Search by Name
 
 
 ## Design Docs

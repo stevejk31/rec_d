@@ -25,7 +25,6 @@
 .welcome-box-image {
   background-image: url("https://lisamulch.files.wordpress.com/2011/06/img_8930.jpg");
   background-size: 1600px 500px;
-  height: 320px;
   width: 100%;
   margin: auto;
   padding: 0;
@@ -47,18 +46,19 @@
   background: rgba(255, 255, 255, .5);
 }
 
+.main-container {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
  #map {
   width: 100%;
-  min-width:300px;
+  min-width:200px;
   height: 100%;
   position: relative;
  }
 
- .main-container {
-   padding-top: 10px;
-   padding-left: 20px;
-   padding-right: 20px;
- }
 
  .map-container {
   min-width: 300px;
@@ -73,6 +73,12 @@
  .map-filters-index {
    padding-top: 20px;
    margin-top: 20px;
+   float:right;
+ }
+
+ .filter-buttons {
+   margin-left: 10px;
+   width: 100px;
  }
 
  .button-open {
@@ -122,16 +128,16 @@
 
 .store-info > li {
   width: 265px;
-  height: 44px
 }
 
 .store-hours {
   padding-top: 20px;
   padding-left: 40px;
+  padding-right: 40px;
 }
 
 .store-hours > li {
-  width:200px;
+  width: 200px;
   height: 44px
 }
 
@@ -194,14 +200,16 @@
 }
 .store-index-item-basic-info {
   cursor:pointer;
-
 }
 
-.reviews-index {
-  min-width: 200px;
-  width: 70%;
+.reviews-index-container {
+  width:65%;
+  margin: 0 0;
+  position: relative;
   float: left;
+  padding-bottom: 20px;
 }
+
 
 .review-store-name {
   cursor:pointer;
@@ -359,18 +367,20 @@
 .navbar-list {
   list-style-type:none;
   float: right;
-  padding: 19px;
-  right: 15px;
-  font-size: 20px;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 10px;
+  right: 20px;
+  font-size: 18px;
   min-width: 200px;
 }
+
 .nav-left {
   float:left;
 }
 
 .navbar-list > li {
-  padding: 10px 20px;
-  float: left;
+  padding: 5px 20px;
 }
 
 .location-search {
@@ -378,6 +388,7 @@
   position:relative;
   float: right;
 }
+
 .search-bar {
   width: 350px;
   position:relative;
@@ -418,15 +429,20 @@
 .location-locations > li:hover {
   cursor:pointer;
 }
+.navbar-header{
+  padding-left: 50px;
+}
+
+
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 
 #logo {
   top: -7px;
   margin: 0 auto;
-  width: 80px;
+  width: 50px;
   position: relative;
   padding: 0;
-  height: 80px;
+  height: 50px;
   background: #0f006f;
   border-radius: 100%;
   text-align: center;
@@ -440,10 +456,10 @@
 
 #logo:hover {
   margin: 0 auto;
-  width: 80px;
+  width: 50px;
   position: relative;
   padding: 0;
-  height: 80px;
+  height: 50px;
   background: #0f006f;
   border-radius: 100%;
   text-align: center;
@@ -465,8 +481,8 @@
   padding: 0;
   top: 0.3rem;
   left: -0.0rem;
-  width: 63px;
-  height: 60px;
+  width: 43px;
+  height: 40px;
   border: 3px solid rgba(255,255,255,.7);
   border-radius: 100%;
   position: relative;
@@ -483,9 +499,9 @@
 #logo #marker p {
 	margin: 0;
   padding: 0;
-  top: 0.8rem;
-  left: -0.4rem;
-  font-size:2.4rem;
+  top: -0.3rem;
+  left: -0.5rem;
+  font-size: 1.8rem;
   color: rgba(255,255,255,.7);
   text-align: center;
   font-family: 'Pacifico', cursive;

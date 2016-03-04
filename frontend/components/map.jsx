@@ -106,7 +106,7 @@ var Map = React.createClass({
     var contentString = '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
-    '<h4 id="firstHeading" class="firstHeading">'+store.basicInfo.name+'</h4>'+
+    '<h4 id="firstHeading" className="firstHeading">'+store.basicInfo.name+'</h4>'+
     '<div className="street">Street:  '+ store.basicInfo.street + '</div>' +
     '<div className="neighborhood">Neighborhood:  ' + store.basicInfo.neighborhood + '</div>' +
     '<div className="city">City:  ' + store.basicInfo.city + '</div>' +

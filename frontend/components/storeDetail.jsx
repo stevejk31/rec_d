@@ -74,8 +74,10 @@ var StoreDetail = React.createClass({
             <StoreHours hours={this.state.store.hours}/>
             </li>
           </ul>
-          <StoreBusinessInfo businessInfo={this.state.store.businessInfo}/>
-          <ReviewIndex storeId={this.state.store.id}/>
+          <div className="container-fluid">
+            <StoreBusinessInfo businessInfo={this.state.store.businessInfo}/>
+            <ReviewIndex storeId={this.state.store.id}/>
+          </div>
         </div>
       );
     }

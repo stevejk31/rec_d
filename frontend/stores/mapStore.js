@@ -41,6 +41,10 @@ MapStore.__onDispatch = function(payload) {
       _params.open = payload.open;
       MapStore.__emitChange();
       break;
+    case "WIFI_AVAIL":
+      _params.wifi = payload.wifi;
+      MapStore.__emitChange();
+      break;
   }
 };
 var resetParams = function(numStores) {
