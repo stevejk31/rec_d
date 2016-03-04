@@ -28,7 +28,7 @@ var PopularReviewItem = React.createClass({
           </h4>
         </div>
         <div className="popular-review-rating">
-          <span className=" rating" data-stars={this.props.review.rating}/>
+          <span className=" rating" data-stars={this.props.review.rating.toString()+".0"}/>
         </div>
         <div className="popular-review-review">{this.props.review.review}</div>
 

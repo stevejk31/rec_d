@@ -1,7 +1,8 @@
 class StoreHour < ActiveRecord::Base
   belongs_to :store
   validates :store, presence: true
-  validates( :day_of_week,
+  validates(
+    :day_of_week,
     presence: true,
     inclusion: { in: %w(Mon Tues Wed Thurs Fri Sat Sun)}
     )

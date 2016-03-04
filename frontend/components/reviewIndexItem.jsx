@@ -27,7 +27,7 @@ var ReviewIndexItem = React.createClass({
           <h4>{this.props.review.user.username}</h4>
         </div>
         <div className="review-rating">
-          <span className=" rating" data-stars={this.props.review.rating}/>
+          <span className=" rating" data-stars={this.props.review.rating.toString()+".0"}/>
         </div>
         <div className="review-review">{this.props.review.review}</div>
         {this.renderDelete()}

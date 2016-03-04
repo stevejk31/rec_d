@@ -1,7 +1,7 @@
 var React = require('react');
 var StoreIndex = require('../components/storeIndex.jsx');
 var NavBar = require('../components/navBar.jsx');
-
+var Footer = require('../components/footer.jsx')
 
 
 var App = React.createClass({
@@ -13,6 +13,7 @@ var App = React.createClass({
         <div className="main-container container-fluid">
           {this.props.children}
         </div>
+        <Footer />
       </div>
     );
   }

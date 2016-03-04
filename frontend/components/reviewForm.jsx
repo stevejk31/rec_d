@@ -33,11 +33,13 @@ var ReviewForm = React.createClass({
   _onReviewPosted: function () {
     if (ReviewStore.errors().length === 0) {
       this.setState(this.blankAttrs);
+      this.reviewListener.remove();
+
     } else {
+      this.reviewListener.remove();
       this.errors = ReviewStore.errors();
       this.forceUpdate();
     }
-
   },
 
   handleRadioChange: function(value, e) {
@@ -49,7 +51,7 @@ var ReviewForm = React.createClass({
     if (this.errors !== undefined){
       reactErrors = this.errors.map(function(error){
         return (
-          <div className="error-indv">
+          <div key={error} className="error-indv">
             {error}
           </div>
         )

@@ -37,6 +37,10 @@ MapStore.__onDispatch = function(payload) {
       resetParams(payload.numStores);
       MapStore.__emitChange();
       break;
+    case "OPEN_STORES":
+      _params.open = payload.open;
+      MapStore.__emitChange();
+      break;
   }
 };
 var resetParams = function(numStores) {

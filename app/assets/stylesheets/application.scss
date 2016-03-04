@@ -6,11 +6,13 @@
 #splash-left {
   float: left;
   width: 56%;
+  padding-bottom: 20px;
 }
 
 #splash-right {
   float: right;
   width: 40%;
+  padding-bottom: 20px;
 }
 
 .guest-login {
@@ -23,7 +25,6 @@
 .welcome-box-image {
   background-image: url("https://lisamulch.files.wordpress.com/2011/06/img_8930.jpg");
   background-size: 1600px 500px;
-  text-align: center;
   height: 320px;
   width: 100%;
   margin: auto;
@@ -34,6 +35,8 @@
 
 .welcome-box {
   width: 100%;
+  text-align: center;
+  font-size: 20px;
   padding: 0 0;
   height: 100%;
   margin: auto;
@@ -42,7 +45,6 @@
   text-shadow: 1px 1px #000000;
   z-index: 5;
   background: rgba(255, 255, 255, .5);
-
 }
 
  #map {
@@ -66,6 +68,23 @@
   position: fixed;
   float:right;
   transform:translateX(100%);
+ }
+
+ .map-filters-index {
+   padding-top: 20px;
+   margin-top: 20px;
+ }
+
+ .button-open {
+   background-color: #F5D04C;
+ }
+
+ .button-open:after {
+   background-color: #F5D04C;
+ }
+
+ .button-open:hover {
+   background-color: #F5D04C;
  }
 
  .map2-container {
@@ -551,10 +570,46 @@
   }
 }
 
-
-
 .group:after {
   content: "";
   display: block;
   clear: both;
+}
+
+.footer {
+  width: 100%;
+  margin-top: 200px;
+  margin: 0 auto;
+  background: #fff;
+  color: #aaa;
+  font-size: 14px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  bottom: 0;
+}
+.footer-links > li {
+  list-style-type:none;
+
+}
+.footer-copy {
+  display: block;
+  padding: 20px;
+  float: right;
+}
+
+.footer-links {
+  padding: 20px;
+  float: left;
+}
+
+.footer-links > li {
+  float: right;
+  padding: 0 0 0 20px;
+}
+
+.footer a:hover {
+  color: #000;
 }

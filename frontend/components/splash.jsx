@@ -38,7 +38,6 @@ var Splash = React.createClass({
       return(
         <div className="welcome-box">
           <br/>
-          <br/>
           <h3>
             <font color="#F5D04C">
               {"Rec'd is the best way to find great coffee shops in San Fransisco"}
@@ -56,7 +55,7 @@ var Splash = React.createClass({
           </button>
           <br/>
           <br/>
-          <br/>
+          
           <div>
             {"Just want to check us out? "}
             <u onClick={this.guestLogin} className="guest-login"

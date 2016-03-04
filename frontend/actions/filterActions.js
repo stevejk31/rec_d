@@ -12,7 +12,14 @@ var FilterActions = {
       actionType: "SEARCH_TAG",
       tag: tag,
     });
+  },
+  openStores: function (bool){
+    AppDispatcher.dispatch({
+      actionType: "OPEN_STORES",
+      open: bool,
+    });
   }
+
 };
 
 module.exports = FilterActions;

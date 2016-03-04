@@ -1,11 +1,12 @@
 var React = require('react');
-var StoreStore = require('../stores/storeStore.js');
 var ApiUtils = require('../utils/utils.js');
+var StoreStore = require('../stores/storeStore.js');
 var StoreIndexItem = require('../components/storeIndexItem.jsx');
 var Map = require('../components/map.jsx');
-var MapStore = require('../stores/mapStore.js');
-var History = require('react-router').History;
 var MapActions = require('../actions/mapActions.js');
+var MapStore = require('../stores/mapStore.js');
+var Filter = require('../components/filter.jsx');
+var History = require('react-router').History;
 
 
 var StoreIndex = React.createClass({
@@ -109,6 +110,7 @@ var StoreIndex = React.createClass({
           onMarkerHover={this.handleMarkerHover}
           stores={this.state.stores}
           />
+        <Filter />
         </div>
         <div id="store-index-left">
           <ul className="stores-list nav nav-pills nav-stacked">
