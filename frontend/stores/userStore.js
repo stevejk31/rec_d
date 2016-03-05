@@ -2,6 +2,7 @@ var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher.js');
 
 var _user = {};
+
 var UserStore = new Store(AppDispatcher);
 
 UserStore.currentUser = function() {

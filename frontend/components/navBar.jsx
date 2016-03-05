@@ -32,14 +32,14 @@ var NavBar = React.createClass({
   signUp: function(e) {
     e.preventDefault();
     window.location.replace("/signup");
-    this.history.pushState({}, '/signup/', {});
+    this.history.push('/signup/');
 
   },
 
   logIn: function(e) {
     e.preventDefault();
     window.location.replace("/login");
-    this.history.pushState({}, '/login/', {});
+    this.history.push('/login/');
 
   },
 
@@ -47,8 +47,10 @@ var NavBar = React.createClass({
     ApiUtils.signOutCurrentUser();
   },
 
-  userProfile: function() {
-
+  userProfile: function(e) {
+    e.preventDefault();
+    window.location.replace("/#/user/");
+    this.history.push('/user/');
   },
 
   renderNavBarRight: function() {
@@ -68,7 +70,9 @@ var NavBar = React.createClass({
         <ul className="navbar-list nav-pills">
           <li>
             <b>
-              <font color="#0f006f">{this.state.currentUser.username}</font>
+              <a href="#" onClick={this.userProfile}><font color="#0f006f">
+                {this.state.currentUser.username}
+              </font></a>
             </b>
           </li>
           <li onClick={this.signOut} className="icon-bar">

@@ -1,6 +1,5 @@
 var React = require('react');
 var ApiUtils = require('../utils/utils.js');
-var UserStore = require('../stores/userStore.js');
 var History = require('react-router').History;
 
 
