@@ -6,7 +6,10 @@ var History = require('react-router').History;
 var PopularReviewItem = React.createClass({
   mixins: [History],
   getInitialState: function() {
-    return {reviewLength: 200};
+    var bool = this.props.review.review.length < 200
+    return {reviewLength: 200,
+            reviewFull: bool
+    };
   },
 
   showDetail: function (e) {
@@ -16,22 +19,14 @@ var PopularReviewItem = React.createClass({
   },
 
   handleReview: function(e) {
-
     e.preventDefault();
-    if (this.state.reviewLength < this.props.review.review.length) {
-      this.setState({reviewLength: this.props.review.review.length});
-    } else {
-      this.setState({reviewLength: 200});
-    }
+    this.setState({reviewLength: this.props.review.review.length,
+                   reviewFull: true
+                });
   },
 
   renderReview: function () {
-    outputReview = [this.props.review.review];
-    if (this.props.review.review.length > this.state.reviewLength) {
-      outputReview = [this.props.review.review.slice(0,this.state.reviewLength)];
-      outputReview.push(<a onClick={this.handleReview} href="#">... see more</a>);
-    }
-    return outputReview;
+    return this.props.review.review.slice(0,this.state.reviewLength);
   },
 
   render: function() {
@@ -54,6 +49,7 @@ var PopularReviewItem = React.createClass({
         <div
           className="popular-review-review">
           {this.renderReview()}
+          {this.state.reviewFull ? "" : <a onClick={this.handleReview} href="#">... see more</a>}
         </div>
 
       </li>
