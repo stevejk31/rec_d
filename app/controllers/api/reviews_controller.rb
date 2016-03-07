@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
   def index
-    @reviews = Review.joins(:store).order("RANDOM()").first(3)
+    @reviews = Review.joins(:store).order("RANDOM()").first(4)
   end
 
   def show

@@ -40,12 +40,12 @@ var Splash = React.createClass({
           <br/>
           <h3>
             <font color="#F5D04C">
-              {"Rec'd is the best way to find great coffee shops in San Fransisco"}
+              {"Use Rec'd to find great coffee shops in San Fransisco"}
             </font>
           </h3>
           <br/>
           <div>{"People use Rec'd to search for new coffee places in the city by location or by name.\n "}</div>
-          <div>{"What will you uncover in your neighborhood next?"}</div>
+          <div>{"What does your neighborhood have to offer?"}</div>
           <br/>
           <button
             onClick={this.signUp}
