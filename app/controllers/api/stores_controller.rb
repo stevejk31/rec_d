@@ -56,7 +56,7 @@ class Api::StoresController < ApplicationController
 
     # popular
     if !@stores && params[:params][:numStores] == "5"
-      @stores = Store.where('rating > ?', 3).order("RANDOM()").first(5)
+      @stores = Store.where('rating = ?', 5).order("RANDOM()").first(5)
     end
   end
 
