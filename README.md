@@ -5,7 +5,7 @@ Rec'D is a web application inspired by Yelp for coffee enthusiasts in San Fransi
 View it live at www.recd-sf.com
 
 ###Main Functionality:
-* Search for Coffe shops in the city of San Fransisco
+* Search for Coffee shops in the city of San Fransisco
 * Filter search results by location and several store features (ei. hours, parking, wifi)
 * Submit reviews on visited coffee shops fielding a dynamic rating of the store.
 * See recent reviews and high scoring local shops to enhance your inner-adventurer
@@ -14,7 +14,7 @@ View it live at www.recd-sf.com
 * Google Maps integration
 * Server-side searching and pagination
 * Hand-rolled authentication via Rails
-* creating chainable search results dependent on if the filter is availabe
+* Creating chain-able search results dependent on if the filter is available
 
 And thus our search method becomes simply:
 ```
