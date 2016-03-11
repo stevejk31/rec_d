@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   before_filter :login_in?
-  
+
   def new
   end
 
