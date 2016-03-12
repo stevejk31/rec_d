@@ -53,6 +53,10 @@
 }
 
 .welcome-box-image {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   background-image: url("https://lisamulch.files.wordpress.com/2011/06/img_8930.jpg");
   background-size: 1600px 800px;
   width: 80%;
@@ -65,6 +69,10 @@
 
 
 .welcome-box {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   width: 100%;
   text-align: center;
   font-size: 20px;
@@ -75,7 +83,7 @@
   color: #faebd7;
   text-shadow: 1px 1px #000000;
   z-index: 5;
-  background: rgba(255, 255, 255, .10);
+  background: rgba(000, 000, 000, .30);
 }
 
 .main-container {
