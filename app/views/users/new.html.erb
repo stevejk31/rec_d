@@ -1,18 +1,39 @@
-<%= render "layouts/nav_bar" %>
-<% @in_type = "signup" %>
-<%= render partial: "layouts/in_form", locals: { in_type:  @in_type} %>
+<div id="wrapper">
+  <%= render "layouts/nav_bar" %>
+  <div className="main-container container-fluid">
+    <% @in_type = "signup" %>
+    <%= render partial: "layouts/in_form", locals: { in_type:  @in_type} %>
 
-</br>
-<div class="redirect-form">
-  <h3>Have An Account?</h3>
-  <%= button_to "Log In", login_url, method:"get", class:"btn btn-default" %>
+    </br>
+    <div class="redirect-form">
+      <h3>Have An Account?</h3>
+      <%= button_to "Log In", login_url, method:"get", class:"btn btn-default" %>
+    </br>
+    </br>
+      <h4>Sign in as Guest?</h4>
+      <form action = "<%= session_url %>", method = "post">
+        <%= auth_token_input %>
+        <input type="hidden" name="user[username]" value="guestBarista1">
+        <input type="hidden" name="user[password]" value="asdfasdf">
+        <button type="submit" class="btn btn-default">Guest Login</button>
+      </form>
 
-  <h3>Sign in as Guest??</h3>
-  <form action = "<%= session_url %>", method = "post">
-    <%= auth_token_input %>
-    <input type="hidden" name="user[username]" value="guestBarista1">
-    <input type="hidden" name="user[password]" value="asdfasdf">
-    <button type="submit" class="btn btn-default">Guest Login</button>
-  </form>
+    </div>
+  </div>
+  <div class="footer">
+    <footer class="footer group">
 
+      <small class="footer-copy">
+        {"© 2016 Po'Tart All rights reserved."}
+      </small>
+
+      <ul class="footer-links group">
+        <li><a onClick={this.handleClick} href="/#/stores/">Search</a></li>
+        <li><a onClick={this.handleClick} href="/#/">Home</a></li>
+        <li><a onClick={this.handleClick} href="/#/about/">About</a></li>
+
+      </ul>
+
+    </footer>
+  </div>
 </div>
