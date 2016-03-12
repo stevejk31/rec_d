@@ -38,11 +38,11 @@ var Splash = React.createClass({
       return(
         <div className="welcome-box">
           <br/>
-          <h3>
+          <h2>
             <font color="#F5D04C">
               {"Use Rec'd to find great coffee shops in San Fransisco"}
             </font>
-          </h3>
+          </h2>
           <br/>
           <div>{"People use Rec'd to search for new coffee places in the city by location or by name.\n "}</div>
           <div>{"What does your neighborhood have to offer?"}</div>
