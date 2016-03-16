@@ -3,37 +3,41 @@
   <div className="main-container container-fluid">
     <% @in_type = "login" %>
 
-    <%= render partial: "layouts/in_form", locals: { in_type:  @in_type} %>
+    <div id="in-left">
+      <%= render partial: "layouts/in_form", locals: { in_type:  @in_type} %>
+    </div>
 
-    </br>
-    <div class="redirect-form">
-      <h3>No Account Yet?</h3>
-      <div class="text">That's okay, we still love you.</div>
-      <br>
-      <%= button_to "Sign Up", signup_url, method:"get", class:"btn btn-default" %>
-      <h4>Sign in as Guest?</h4>
-      <form action = "<%= session_url %>", method = "post">
-        <%= auth_token_input %>
-        <input type="hidden" name="user[username]" value="guestBarista1">
-        <input type="hidden" name="user[password]" value="asdfasdf">
-        <button type="submit" class="btn btn-default">Guest Login</button>
-      </form>
+    <div id="in-right">
+      <div class="redirect-form">
+        <h1>No Account Yet?</h1>
+        <div class="text">
+          Rec'd is the fun and easy way to find, review and talk about what's great - and not so great - in your local area. It's about real people giving their honest and personal opinions on coffee shops.
+        </div>
+        <br>
+        <%= button_to "Sign Up", signup_url, method:"get", class:"btn btn-default" %>
+        <br>
+        <h4>Want to check out how our site works no commitment?</h4>
+        <form action = "<%= session_url %>", method = "post">
+          <%= auth_token_input %>
+          <input type="hidden" name="user[username]" value="guestBarista1">
+          <input type="hidden" name="user[password]" value="asdfasdf">
+          <button type="submit" class="btn btn-default">Login as a Guest</button>
+        </form>
+      </div>
     </div>
   </div>
-  <div class="footer">
-    <footer class="footer group">
+  <footer class="footer-in-page">
 
-      <small class="footer-copy">
-        {"© 2016 Po'Tart All rights reserved."}
-      </small>
+    <small class="footer-copy">
+      {"© 2016 Po'Tart All rights reserved."}
+    </small>
 
-      <ul class="footer-links group">
-        <li><a onClick={this.handleClick} href="/#/stores/">Search</a></li>
-        <li><a onClick={this.handleClick} href="/#/">Home</a></li>
-        <li><a onClick={this.handleClick} href="/#/about/">About</a></li>
+    <ul class="footer-links group">
+      <li><a onClick={this.handleClick} href="/#/stores/">Search</a></li>
+      <li><a onClick={this.handleClick} href="/#/">Home</a></li>
+      <li><a onClick={this.handleClick} href="/#/about/">About</a></li>
 
-      </ul>
+    </ul>
 
-    </footer>
-  </div>
+  </footer>
 </div>

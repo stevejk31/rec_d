@@ -2,14 +2,17 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
+html {
+  height:100%;
+}
  body {
    font-family: 'Raleway', serif;
+   height:100%;
  }
-
 
 #wrapper {
   background-color: #faebd7;
+  height:100%;
 }
 #splash-left {
   float: left;
@@ -147,22 +150,46 @@
   float: right;
 }
 
-.in-form {
-  width: 350px;
-  height: 50%;
-  margin: auto;
+.error-indv {
+  max-height: 50px;
+  min-height: 10px;
+  text-align: center;
+  color: red;
 }
 
+#in-right {
+  float: right;
+  width: 50%;
+}
+
+#in-left{
+  float: left;
+  width: 50%;
+}
+
+.in-form {
+  width: 350px;
+  margin: auto;
+  float: right;
+  padding-right: 10%;
+}
 
 .redirect-form {
-  width: 300px;
-  height: 50%;
+  border-left: 1px solid #ccc;
+  width: 500px;
+  height: 350px;
   margin: auto;
-  padding-bottom: 250px
+  float: left;
+  padding-left: 10%;
 }
 
 .page-header {
-  margin: auto;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.in-form-btn {
+  float: right;
 }
 
 .store-info {
@@ -658,6 +685,23 @@
   border-top-right-radius: 5px;
   bottom: 0;
 }
+
+.footer-in-page {
+  height: 75px;
+  width: 100%;
+  background: #fff;
+  color: #aaa;
+  font-size: 14px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  bottom: 0;
+  position:fixed;
+}
+
+
 .footer-links > li {
   list-style-type:none;
 

@@ -70,9 +70,9 @@ var NavBar = React.createClass({
         <ul className="navbar-list nav-pills">
           <li>
             <b>
-              <a href="#" onClick={this.userProfile}><font color="#0f006f">
+              <font color="#0f006f">
                 {this.state.currentUser.username}
-              </font></a>
+              </font>
             </b>
           </li>
           <li onClick={this.signOut} className="icon-bar">
