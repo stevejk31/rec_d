@@ -403,12 +403,12 @@ html {
   display: inline-block;
   text-indent: -9999px;
   content: "☆";
-  color: #eee;
+  color: #FFFFFF;
 }
 .star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
   content: "★";
   color: gold;
-  text-shadow: #eee;
+  text-shadow: #FFFFFF;
 }
 .star-cb-group > .star-cb-clear + label {
   text-indent: -9999px;
@@ -420,13 +420,13 @@ html {
 }
 .star-cb-group:hover > input + label:before {
   content: "☆";
-  color: #eee;
+  color: #FFFFFF;
   text-shadow: none;
 }
 .star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
   content: "★";
   color: gold;
-  text-shadow: #eee;
+  text-shadow: #FFFFFF;
 }
 
 .navbar-default {

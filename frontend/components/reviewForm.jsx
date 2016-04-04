@@ -74,33 +74,11 @@ var ReviewForm = React.createClass({
         <span className="star-cb-group">
           <input type="radio"
             name="rating"
-            value={0}
-            id="rating-0"
-            checked={this.state.rating === 0}
-            onChange={this.handleRadioChange.bind(this,0)}
-            className="star-cb-clear"
-          /><label htmlFor="rating-0">0</label>
-          <input type="radio"
-            name="rating"
-            value={1}
-            id="rating-1"
-            checked={this.state.rating === 1}
-            onChange={this.handleRadioChange.bind(this,1)}
-          /><label htmlFor="rating-1">1</label>
-          <input type="radio"
-            name="rating"
-            value={2}
-            id="rating-2"
-            checked={this.state.rating === 2}
-            onChange={this.handleRadioChange.bind(this,2)}
-          /><label htmlFor="rating-2">2</label>
-          <input type="radio"
-            name="rating"
-            value={3}
-            id="rating-3"
-            checked={this.state.rating === 3}
-            onChange={this.handleRadioChange.bind(this,3)}
-          /><label htmlFor="rating-3">3</label>
+            value={5}
+            id="rating-5"
+            checked={this.state.rating === 5}
+            onChange={this.handleRadioChange.bind(this,5)}
+          /><label htmlFor="rating-5">5</label>
           <input type="radio"
             name="rating"
             value={4}
@@ -110,11 +88,33 @@ var ReviewForm = React.createClass({
           /><label htmlFor="rating-4">4</label>
           <input type="radio"
             name="rating"
-            value={5}
-            id="rating-5"
-            checked={this.state.rating === 5}
-            onChange={this.handleRadioChange.bind(this,5)}
-          /><label htmlFor="rating-5">5</label>
+            value={3}
+            id="rating-3"
+            checked={this.state.rating === 3}
+            onChange={this.handleRadioChange.bind(this,3)}
+          /><label htmlFor="rating-3">3</label>
+          <input type="radio"
+            name="rating"
+            value={2}
+            id="rating-2"
+            checked={this.state.rating === 2}
+            onChange={this.handleRadioChange.bind(this,2)}
+          /><label htmlFor="rating-2">2</label>
+          <input type="radio"
+            name="rating"
+            value={1}
+            id="rating-1"
+            checked={this.state.rating === 1}
+            onChange={this.handleRadioChange.bind(this,1)}
+          /><label htmlFor="rating-1">1</label>
+          <input type="radio"
+            name="rating"
+            value={0}
+            id="rating-0"
+            checked={this.state.rating === 0}
+            onChange={this.handleRadioChange.bind(this,0)}
+            className="star-cb-clear"
+          /><label htmlFor="rating-0">0</label>
         </span>
 
         <div>
