@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: rec_d_production
-  username: rec_d
+  database: d7loohvgb7ct95
+  username: icsimuoqpohcyb
   password: <%= ENV['REC_D_DATABASE_PASSWORD'] %>
