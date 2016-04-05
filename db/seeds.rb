@@ -16,9 +16,12 @@ User.create!(password: "asdfasdf", username: "guestBarista1")
 end
 stores.each do |store|
   # seed data poor fail quietly
-  if Store.create(store[:business])
-    store[:tags].each do |tag|
-      Tag.create({store_id: Store.last.id, tag: tag[1]})
+  rand_num = rand(0..10)
+  if  rand_num != 0
+    if Store.create(store[:business])
+      store[:tags].each do |tag|
+        Tag.create({store_id: Store.last.id, tag: tag[1]})
+      end
     end
   end
 end
